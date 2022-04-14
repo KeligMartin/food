@@ -2,6 +2,7 @@ package model.recipe;
 
 import lombok.Builder;
 import lombok.Getter;
+import model.ingredient.Ingredient;
 
 import java.util.List;
 
@@ -14,6 +15,8 @@ public class Recipe {
     private String name;
 
     private List<String> steps;
+
+    public List<Ingredient> ingredients;
 
     public void validate(){
 
