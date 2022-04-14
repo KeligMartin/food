@@ -12,6 +12,7 @@ public class AddIngredient {
     }
 
     public Ingredient execute(Ingredient ingredient) throws Exception {
+
         if (ingredient.isExpired())
             throw new Exception("The ingredient is expired !");
         return ingredients.addIngredient(ingredient);
