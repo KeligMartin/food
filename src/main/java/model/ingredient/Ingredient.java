@@ -2,8 +2,10 @@ package model.ingredient;
 
 import lombok.Builder;
 import lombok.Getter;
+import model.user.DietaryRegimes;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Builder
 @Getter
@@ -15,9 +17,7 @@ public class Ingredient {
 
     private LocalDate expirationDate;
 
-    public void validate(){
-
-    }
+    private List<DietaryRegimes> compatibleRegimes;
 
     public boolean isExpired() {
         return LocalDate.now().isAfter(this.expirationDate);
