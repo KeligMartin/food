@@ -23,18 +23,11 @@ public class Recipe {
 
     }
 
-    public boolean isCompatibleWithRegimes(List<DietaryRegimes> regimes) {
-        boolean isCompatible = true;
+    public boolean isRecipeCompatibleWithRegimes(List<DietaryRegimes> regimes) {
         for (Ingredient ingredient: this.ingredients) {
-            for (DietaryRegimes regime: regimes) {
-                if (!ingredient.getCompatibleRegimes().contains(regime)){
-                    isCompatible = false;
-                    break;
-                }
-            }
-            if (!isCompatible)
-                break;
+            if (!ingredient.isCompatibleWithRegimeList(regimes))
+                return false;
         }
-        return isCompatible;
+        return true;
     }
 }

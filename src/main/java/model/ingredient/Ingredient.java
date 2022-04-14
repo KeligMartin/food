@@ -17,9 +17,20 @@ public class Ingredient {
 
     private LocalDate expirationDate;
 
-    private List<DietaryRegimes> compatibleRegimes;
+    private List<DietaryRegimes> compatibleRegimeList;
 
     public boolean isExpired() {
         return LocalDate.now().isAfter(this.expirationDate);
+    }
+
+    public boolean isCompatibleWithRegimeList(List<DietaryRegimes> regimes){
+        boolean isCompatible = true;
+        for (DietaryRegimes regime: regimes) {
+            if (!this.getCompatibleRegimeList().contains(regime)){
+                isCompatible = false;
+                break;
+            }
+        }
+        return isCompatible;
     }
 }
