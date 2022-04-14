@@ -1,4 +1,4 @@
-package model;
+package model.recipe;
 
 public interface Recipes {
 

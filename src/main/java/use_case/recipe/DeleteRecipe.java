@@ -1,6 +1,6 @@
-package use_case;
+package use_case.recipe;
 
-import model.Recipes;
+import model.recipe.Recipes;
 
 public class DeleteRecipe {
 

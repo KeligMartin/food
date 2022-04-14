@@ -1,7 +1,7 @@
-package use_case;
+package use_case.recipe;
 
-import model.Recipe;
-import model.Recipes;
+import model.recipe.Recipe;
+import model.recipe.Recipes;
 
 public class AddRecipe {
 
