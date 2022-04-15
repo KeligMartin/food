@@ -51,7 +51,7 @@ public class FakeUsers implements UserRepository {
     }
 
     @Override
-    public User findById(User userId) {
+    public User findById(String userId) {
         return userMap.get(userId);
     }
 }
