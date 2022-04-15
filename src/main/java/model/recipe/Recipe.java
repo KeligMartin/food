@@ -26,4 +26,10 @@ public class Recipe {
     public boolean isRecipeCompatibleWithRegimes(List<DietaryRegimes> regimes) {
         return ingredients.stream().allMatch(ingredient -> ingredient.isCompatibleWithRegimeList(regimes));
     }
+
+    public Integer getCalories() {
+        return this.ingredients.stream()
+                .map(Ingredient::getCalorie)
+                .reduce(0, Integer::sum);
+    }
 }

@@ -19,6 +19,8 @@ public class Ingredient {
 
     private List<DietaryRegimes> compatibleRegimeList;
 
+    private Integer calorie;
+
     public boolean isExpired() {
         return LocalDate.now().isAfter(this.expirationDate);
     }
