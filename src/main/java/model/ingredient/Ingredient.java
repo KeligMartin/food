@@ -24,13 +24,11 @@ public class Ingredient {
     }
 
     public boolean isCompatibleWithRegimeList(List<DietaryRegimes> regimes){
-        boolean isCompatible = true;
         for (DietaryRegimes regime: regimes) {
             if (!this.getCompatibleRegimeList().contains(regime)){
-                isCompatible = false;
-                break;
+                return false;
             }
         }
-        return isCompatible;
+        return true;
     }
 }
