@@ -6,6 +6,7 @@ import model.recipe.Recipe;
 import model.user.customexception.CalorieValueNotFoundException;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -37,5 +38,21 @@ public class User {
 
         public boolean canEatRecipe(Recipe recipe) {
                 return recipe.getIngredients().stream().allMatch(ingredient -> ingredient.isCompatibleWithRegimeList(this.dietaryRegimes));
+        }
+
+        public void eatRecipe(Recipe recipe) {
+                if (!this.canEatRecipe(recipe)) {
+                        return;
+                }
+
+                Optional<Integer> calorieOfTheDay = getCaloriesByDate(LocalDate.now());
+
+                if (calorieOfTheDay.isEmpty()) {
+                        this.caloriesConsumedByDate.put(LocalDate.now(), recipe.getCalories());
+                        return;
+                }
+
+                if (isCaloriesBetweenThresholds(calorieOfTheDay.get() + recipe.getCalories()))
+                        this.caloriesConsumedByDate.put(LocalDate.now(), calorieOfTheDay.get() + recipe.getCalories());
         }
 }
