@@ -36,6 +36,6 @@ public class User {
         }
 
         public boolean canEatRecipe(Recipe recipe) {
-                return recipe.getIngredients().stream().allMatch(ingredient -> ingredient.isCompatibleWithRegimeList(this.dietaryRegimes));
+                return recipe.isRecipeCompatibleWithRegimes(this.dietaryRegimes);
         }
 }

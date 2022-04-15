@@ -24,10 +24,6 @@ public class Recipe {
     }
 
     public boolean isRecipeCompatibleWithRegimes(List<DietaryRegimes> regimes) {
-        for (Ingredient ingredient: this.ingredients) {
-            if (!ingredient.isCompatibleWithRegimeList(regimes))
-                return false;
-        }
-        return true;
+        return ingredients.stream().allMatch(ingredient -> ingredient.isCompatibleWithRegimeList(regimes));
     }
 }
