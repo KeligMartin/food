@@ -10,7 +10,7 @@ public class DeleteIngredient {
         this.recipes = recipes;
     }
 
-    public void execute(int id) {
-        recipes.deleteIngredient(id);
+    public void execute(String ingredientId) {
+        recipes.deleteIngredient(ingredientId);
     }
 }

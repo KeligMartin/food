@@ -1,8 +1,7 @@
 package model.ingredient;
 
-import model.ingredient.Ingredient;
 public interface IngredientRepository {
-    Ingredient findById(String IngredientId);
+    Ingredient findById(String ingredientId);
     Ingredient addIngredient(Ingredient ingredient);
-    void deleteIngredient(int id);
+    Ingredient deleteIngredient(String ingredientId);
 }
