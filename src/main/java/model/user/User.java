@@ -2,6 +2,7 @@ package model.user;
 
 import lombok.Builder;
 import lombok.Getter;
+import model.recipe.Recipe;
 import model.user.customexception.CalorieValueNotFoundException;
 
 import java.time.LocalDate;
@@ -32,5 +33,9 @@ public class User {
 
         public boolean isCaloriesBetweenThresholds(Integer caloriesValue){
                 return caloriesValue >= 100 && caloriesValue <= 1000;
+        }
+
+        public boolean canEatRecipe(Recipe recipe) {
+                return recipe.getIngredients().stream().allMatch(ingredient -> ingredient.isCompatibleWithRegimeList(this.dietaryRegimes));
         }
 }
