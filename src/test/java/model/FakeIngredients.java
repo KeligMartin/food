@@ -1,4 +1,4 @@
-package use_case;
+package model;
 
 import model.ingredient.Ingredient;
 import use_case.ingredient.IngredientRepository;

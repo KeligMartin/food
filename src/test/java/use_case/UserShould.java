@@ -1,7 +1,9 @@
 package use_case;
 
+import model.FakeIngredients;
+import model.FakeRecipes;
+import model.FakeUsers;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import use_case.ingredient.IngredientRepository;
 import use_case.recipe.RecipeRepository;
 import use_case.user.UserRepository;

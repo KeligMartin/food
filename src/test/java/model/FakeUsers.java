@@ -1,4 +1,4 @@
-package use_case;
+package model;
 
 import model.user.DietaryRegimes;
 import model.user.User;
