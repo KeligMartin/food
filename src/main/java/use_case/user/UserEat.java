@@ -2,6 +2,7 @@ package use_case.user;
 
 import model.recipe.Recipe;
 import model.user.User;
+import model.user.UserRepository;
 import model.user.customexception.IncompatibleRegimeException;
 import use_case.recipe.FindRecipeById;
 
@@ -9,19 +10,17 @@ public class UserEat {
 
     private final FindUserById findUserById;
     private final FindRecipeById findRecipeById;
+    private final UserRepository repository;
 
-    public UserEat(FindUserById findUserById, FindRecipeById findRecipeById) {
+    public UserEat(FindUserById findUserById, FindRecipeById findRecipeById, UserRepository repository) {
         this.findUserById = findUserById;
         this.findRecipeById = findRecipeById;
+        this.repository = repository;
     }
 
     public void execute(String userId, String recipeId) {
         User user = findUserById.execute(userId);
         Recipe recipe = findRecipeById.execute(recipeId);
-        try {
-            user.eatRecipe(recipe);
-        } catch (IncompatibleRegimeException incompatibleRegimeException) {
-            System.out.println(incompatibleRegimeException.getMessage());
-        }
+        this.repository.userEat(userId, recipeId);
     }
 }
