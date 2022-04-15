@@ -13,47 +13,54 @@ import java.util.Map;
 public class FakeRecipes implements RecipeRepository {
 
     Map<String, Recipe> recipeMap;
+    FakeIngredients fakeIngredients;
 
     public FakeRecipes() {
+        FakeIngredients fakeIngredients = new FakeIngredients();
 
         recipeMap = new HashMap<>();
-        List<Ingredient> ingredientList = new ArrayList<>();
-        List<String> steps = new ArrayList<>();
+        List<Ingredient> saladeTomateOignonIngredientList = new ArrayList<>();
+        List<String> saladeTomateOignonSteps = new ArrayList<>();
 
-        Ingredient salade = Ingredient
-                .builder()
-                .name("Salade")
-                .expirationDate(LocalDate.now())
-                .build();
+        Ingredient salade = fakeIngredients.findById("001");
+        Ingredient tomate = fakeIngredients.findById("002");
+        Ingredient oignons = fakeIngredients.findById("003");
 
-        Ingredient tomate = Ingredient
-                .builder()
-                .name("Tomate")
-                .expirationDate(LocalDate.now())
-                .build();
+        saladeTomateOignonIngredientList.add(salade);
+        saladeTomateOignonIngredientList.add(tomate);
+        saladeTomateOignonIngredientList.add(oignons);
 
-        Ingredient oignons = Ingredient
-                .builder()
-                .name("Oignons")
-                .expirationDate(LocalDate.now())
-                .build();
+        saladeTomateOignonSteps.add(salade.getName());
+        saladeTomateOignonSteps.add(tomate.getName());
+        saladeTomateOignonSteps.add(oignons.getName());
 
-        ingredientList.add(salade);
-        ingredientList.add(tomate);
-        ingredientList.add(oignons);
-
-        steps.add(salade.getName());
-        steps.add(tomate.getName());
-        steps.add(oignons.getName());
-
-        Recipe recipe = Recipe
+        Recipe saladeTomateOignon = Recipe
                 .builder()
                 .name("SaladeTomateOignon")
-                .steps(steps)
-                .ingredients(ingredientList)
+                .steps(saladeTomateOignonSteps)
+                .ingredients(saladeTomateOignonIngredientList)
                 .build();
 
-        recipeMap.put("001", recipe);
+        List<Ingredient> steakFriteIngredientList = new ArrayList<>();
+        List<String> steakFriteSteps = new ArrayList<>();
+
+        Ingredient viande = fakeIngredients.findById("004");
+
+        steakFriteIngredientList.add(viande);
+        steakFriteIngredientList.add(tomate);
+
+        steakFriteSteps.add(viande.getName());
+        steakFriteSteps.add(tomate.getName());
+
+        Recipe steakFrite = Recipe
+                .builder()
+                .name("SteakFrite")
+                .steps(steakFriteSteps)
+                .ingredients(steakFriteIngredientList)
+                .build();
+
+                recipeMap.put("001", saladeTomateOignon);
+                recipeMap.put("002", steakFrite);
 
     }
 

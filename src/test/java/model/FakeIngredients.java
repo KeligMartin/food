@@ -2,9 +2,12 @@ package model;
 
 import model.ingredient.Ingredient;
 import model.ingredient.IngredientRepository;
+import model.user.DietaryRegimes;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FakeIngredients implements IngredientRepository {
@@ -17,24 +20,39 @@ public class FakeIngredients implements IngredientRepository {
         Ingredient ingredient = Ingredient
                 .builder()
                 .name("Salade")
+                .calorie(50)
                 .expirationDate(LocalDate.now())
+                .compatibleRegimeList(new ArrayList<>(List.of(DietaryRegimes.VEGAN)))
                 .build();
 
         Ingredient ingredient2 = Ingredient
                 .builder()
                 .name("Tomate")
+                .calorie(50)
                 .expirationDate(LocalDate.now())
+                .compatibleRegimeList(new ArrayList<>(List.of(DietaryRegimes.VEGAN)))
                 .build();
 
         Ingredient ingredient3 = Ingredient
                 .builder()
                 .name("Oignons")
+                .calorie(50)
                 .expirationDate(LocalDate.now())
+                .compatibleRegimeList(new ArrayList<>(List.of(DietaryRegimes.VEGAN)))
+                .build();
+
+        Ingredient ingredient4 = Ingredient
+                .builder()
+                .name("Viande")
+                .calorie(300)
+                .expirationDate(LocalDate.now())
+                .compatibleRegimeList(new ArrayList<>())
                 .build();
 
         ingredientMap.put("001", ingredient);
         ingredientMap.put("002", ingredient2);
         ingredientMap.put("003", ingredient3);
+        ingredientMap.put("004", ingredient4);
     }
 
 
@@ -49,7 +67,7 @@ public class FakeIngredients implements IngredientRepository {
     }
 
     @Override
-    public void deleteIngredient(int id) {
-
+    public Ingredient deleteIngredient(String ingredientId) {
+        return ingredientMap.remove(ingredientId);
     }
 }
