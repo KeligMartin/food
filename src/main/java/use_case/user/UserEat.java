@@ -2,6 +2,7 @@ package use_case.user;
 
 import model.recipe.Recipe;
 import model.user.User;
+import model.user.customexception.IncompatibleRegimeException;
 import use_case.recipe.FindRecipeById;
 
 public class UserEat {
@@ -17,6 +18,10 @@ public class UserEat {
     public void execute(String userId, String recipeId) {
         User user = findUserById.execute(userId);
         Recipe recipe = findRecipeById.execute(recipeId);
-        user.eatRecipe(recipe);
+        try {
+            user.eatRecipe(recipe);
+        } catch (IncompatibleRegimeException incompatibleRegimeException) {
+            System.out.println(incompatibleRegimeException.getMessage());
+        }
     }
 }

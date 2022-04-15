@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Getter;
 import model.recipe.Recipe;
 import model.user.customexception.CalorieValueNotFoundException;
+import model.user.customexception.IncompatibleRegimeException;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -35,9 +36,9 @@ public class User {
         return caloriesValue >= 100 && caloriesValue <= 1000;
     }
 
-    public void eatRecipe(Recipe recipe) {
+    public void eatRecipe(Recipe recipe) throws IncompatibleRegimeException  {
             if (!this.canEatRecipe(recipe)) {
-                    return;
+                    throw new IncompatibleRegimeException("The recipe " + recipe.getName() + " isn't compatible with the user regime.");
             }
 
             Optional<Integer> calorieOfTheDay = getCaloriesByDate(LocalDate.now());
