@@ -23,7 +23,7 @@ public class User {
                 return Optional.ofNullable(this.caloriesConsumedByDate.get(date));
         }
 
-        public boolean isCaloriesOfTheDayIsValide(LocalDate date) throws CalorieValueNotFoundException {
+        public boolean isCaloriesOfTheDayValid(LocalDate date) throws CalorieValueNotFoundException {
                 Optional<Integer> calories = this.getCaloriesByDate(date);
                 if (calories.isEmpty()){
                         throw new CalorieValueNotFoundException("This user has no calories for this day");
