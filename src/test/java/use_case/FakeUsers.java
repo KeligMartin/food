@@ -1,4 +1,4 @@
-package java.use_case;
+package use_case;
 
 import model.user.DietaryRegimes;
 import model.user.User;
