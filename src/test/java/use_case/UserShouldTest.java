@@ -50,8 +50,8 @@ public class UserShouldTest {
 
     @Test
     void should_user_eat_recipe_without_calories_for_the_day_create_entry_for_the_day() throws IncompatibleRegimeException {
-        User user = userRepository.findById("002");
-        Recipe recipe = recipeRepository.findById("001");
+        User user = userRepository.findById(new UserID("002"));
+        Recipe recipe = recipeRepository.findById(new RecipeID("001"));
         Integer caloriesOfUser = user.getCaloriesConsumed();
         Integer caloriesOfRecipe = recipe.getCalories();
 
