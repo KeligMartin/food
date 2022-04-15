@@ -19,7 +19,7 @@ import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class UserShould {
+public class UserShouldTest {
     private IngredientRepository ingredientRepository;
     private RecipeRepository recipeRepository;
     private UserRepository userRepository;
