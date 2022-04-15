@@ -17,7 +17,7 @@ public class RecipeShouldTest {
     }
 
     @Test
-    void should_find_user_by_id() {
+    void should_find_recipe_by_id() {
         assertThat(recipeRepository.findById("001").getName()).isEqualTo("SaladeTomateOignon");
     }
 }
