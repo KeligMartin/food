@@ -12,7 +12,7 @@ import java.util.Objects;
 @Getter
 public class Recipe {
 
-    private String id;
+    private RecipeID id;
 
     private String name;
 
@@ -36,10 +36,8 @@ public class Recipe {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
         Recipe recipe = (Recipe) o;
-        return Objects.equals(id, recipe.id) && Objects.equals(name, recipe.name) && Objects.equals(steps, recipe.steps) && Objects.equals(ingredients, recipe.ingredients);
+        return recipe.id == this.getId();
     }
 
     @Override
