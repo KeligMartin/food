@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class FakeRecipes implements RecipeRepository {
 
-    Map<String, Recipe> recipeMap;
+    Map<RecipeID, Recipe> recipeMap;
 
     public FakeRecipes() {
         recipeMap = new HashMap<>();
@@ -89,8 +89,8 @@ public class FakeRecipes implements RecipeRepository {
                 .ingredients(ingredient2List)
                 .build();
 
-        recipeMap.put("001", recipe);
-        recipeMap.put("002", recipe2);
+        recipeMap.put(new RecipeID("001"), recipe);
+        recipeMap.put(new RecipeID("002"), recipe2);
 
     }
 
