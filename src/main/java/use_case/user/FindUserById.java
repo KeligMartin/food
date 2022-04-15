@@ -1,6 +1,7 @@
 package use_case.user;
 
 import model.user.User;
+import model.user.UserID;
 import model.user.UserRepository;
 
 public class FindUserById {
@@ -11,7 +12,7 @@ public class FindUserById {
         this.userRepository = userRepository;
     }
 
-    public User execute(String userId) {
+    public User execute(UserID userId) {
         return userRepository.findById(userId);
     }
 }

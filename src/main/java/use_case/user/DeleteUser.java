@@ -1,5 +1,6 @@
 package use_case.user;
 
+import model.user.UserID;
 import model.user.UserRepository;
 
 public class DeleteUser {
@@ -10,7 +11,7 @@ public class DeleteUser {
         this.users = users;
     }
 
-    public void execute(String id) {
+    public void execute(UserID id) {
         this.users.deleteUser(id);
     }
 }

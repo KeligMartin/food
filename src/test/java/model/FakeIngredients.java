@@ -1,6 +1,7 @@
 package model;
 
 import model.ingredient.Ingredient;
+import model.ingredient.IngredientID;
 import model.ingredient.IngredientRepository;
 import model.user.DietaryRegimes;
 
@@ -57,7 +58,7 @@ public class FakeIngredients implements IngredientRepository {
 
 
     @Override
-    public Ingredient findById(String IngredientId) {
+    public Ingredient findById(IngredientID IngredientId) {
         return ingredientMap.get(IngredientId);
     }
 
@@ -67,7 +68,7 @@ public class FakeIngredients implements IngredientRepository {
     }
 
     @Override
-    public Ingredient deleteIngredient(String ingredientId) {
+    public Ingredient deleteIngredient(IngredientID ingredientId) {
         return ingredientMap.remove(ingredientId);
     }
 }

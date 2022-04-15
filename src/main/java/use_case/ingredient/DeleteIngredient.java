@@ -1,5 +1,6 @@
 package use_case.ingredient;
 
+import model.ingredient.IngredientID;
 import model.ingredient.IngredientRepository;
 
 public class DeleteIngredient {
@@ -10,7 +11,7 @@ public class DeleteIngredient {
         this.recipes = recipes;
     }
 
-    public void execute(String ingredientId) {
+    public void execute(IngredientID ingredientId) {
         recipes.deleteIngredient(ingredientId);
     }
 }

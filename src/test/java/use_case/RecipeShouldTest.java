@@ -2,6 +2,7 @@ package use_case;
 
 import model.FakeRecipes;
 import model.recipe.Recipe;
+import model.recipe.RecipeID;
 import model.user.DietaryRegimes;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,12 +24,12 @@ public class RecipeShouldTest {
 
     @Test
     void should_find_recipe_by_id() {
-        assertThat(recipeRepository.findById("001").getName()).isEqualTo("SaladeTomateOignon");
+        assertThat(recipeRepository.findById(new RecipeID("001")).getName()).isEqualTo("SaladeTomateOignon");
     }
 
     @Test
     void recipe_should_be_allowed_for_regular_regime() {
-        Recipe recipe = recipeRepository.findById("001");
+        Recipe recipe = recipeRepository.findById(new RecipeID("001"));
 
         List<DietaryRegimes> regime = new ArrayList<>();
         regime.add(DietaryRegimes.REGULAR);
@@ -38,7 +39,7 @@ public class RecipeShouldTest {
 
     @Test
     void recipe_should_not_be_allowed_for_vegan_regime() {
-        Recipe recipe = recipeRepository.findById("002");
+        Recipe recipe = recipeRepository.findById(new RecipeID("002"));
         List<DietaryRegimes> regime = new ArrayList<>();
         regime.add(DietaryRegimes.VEGAN);
 
@@ -47,7 +48,7 @@ public class RecipeShouldTest {
 
     @Test
     void should_sum_the_total_of_calorie() {
-        Recipe recipe = recipeRepository.findById("001");
+        Recipe recipe = recipeRepository.findById(new RecipeID("001"));
 
         assertThat(recipe.getCalories()).isEqualTo(75);
     }

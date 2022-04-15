@@ -3,6 +3,8 @@ package use_case;
 import model.FakeIngredients;
 import model.FakeRecipes;
 import model.FakeUsers;
+import model.recipe.RecipeID;
+import model.user.UserID;
 import model.user.customexception.IncompatibleRegimeException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,13 +29,13 @@ public class UserShouldTest {
 
     @Test
     void should_find_user_by_id() {
-        assertThat(userRepository.findById("001").getUsername()).isEqualTo("user1");
+        assertThat(userRepository.findById(new UserID("001")).getUsername()).isEqualTo("user1");
     }
 
     @Test
     void should_user_eat_recipe_with_incompatible_regime_throw_IncompatibleRegimeException() {
         assertThrows(IncompatibleRegimeException.class, () -> {
-            userRepository.findById("001").eatRecipe(recipeRepository.findById("001"));
+            userRepository.findById(new UserID("001")).eatRecipe(recipeRepository.findById(new RecipeID("001")));
         });
     }
 

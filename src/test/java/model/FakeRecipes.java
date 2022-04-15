@@ -2,6 +2,7 @@ package model;
 
 import model.ingredient.Ingredient;
 import model.recipe.Recipe;
+import model.recipe.RecipeID;
 import model.recipe.RecipeRepository;
 import model.user.DietaryRegimes;
 
@@ -94,7 +95,7 @@ public class FakeRecipes implements RecipeRepository {
     }
 
     @Override
-    public Recipe findById(String recipeId) {
+    public Recipe findById(RecipeID recipeId) {
         return recipeMap.get(recipeId);
     }
 
@@ -104,7 +105,7 @@ public class FakeRecipes implements RecipeRepository {
     }
 
     @Override
-    public void deleteRecipe(String id) {
+    public void deleteRecipe(RecipeID id) {
 
     }
 }
