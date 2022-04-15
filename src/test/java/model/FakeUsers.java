@@ -18,7 +18,7 @@ public class FakeUsers implements UserRepository {
     public FakeUsers() {
         userMap = new HashMap<>();
         User user1 = User.builder()
-                .username("user")
+                .username("user1")
                 .password("password")
                 .dietaryRegimes(new ArrayList<>(List.of(DietaryRegimes.VEGAN, DietaryRegimes.GLUTEN_INTOLERANT)))
                 .caloriesConsumedByDate(Map.of(

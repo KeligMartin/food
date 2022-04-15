@@ -33,19 +33,7 @@ public class UserShould {
 
     @Test
     void should_find_user_by_id() {
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
-
-        User user = User.builder()
-                .username("user")
-                .password("password")
-                .dietaryRegimes(new ArrayList<>(List.of(DietaryRegimes.VEGAN, DietaryRegimes.GLUTEN_INTOLERANT)))
-                .caloriesConsumedByDate(Map.of(
-                        LocalDate.parse("14/08/2016", dateTimeFormatter),200,
-                        LocalDate.parse("15/08/2016", dateTimeFormatter),250)
-                )
-                .build();
-
-        assertThat(userRepository.findById("001")).isEqualTo(user);
+        assertThat(userRepository.findById("001").getUsername()).isEqualTo("user1");
     }
 
 }
