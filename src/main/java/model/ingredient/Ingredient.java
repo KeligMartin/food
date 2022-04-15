@@ -14,8 +14,7 @@ public class Ingredient {
 
     private IngredientID id;
 
- ls(dietaryRegimes, user.dietaryRegimes) && Objects.equals(caloriesConsumedByDate, user.caloriesConsumedByDate);
-    }   private String name;
+    private String name;
 
     private LocalDate expirationDate;
 
