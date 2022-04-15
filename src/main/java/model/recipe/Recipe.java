@@ -11,7 +11,7 @@ import java.util.List;
 @Getter
 public class Recipe {
 
-    private int id;
+    private String id;
 
     private String name;
 
