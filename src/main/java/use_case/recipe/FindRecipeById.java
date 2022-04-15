@@ -1,6 +1,7 @@
 package use_case.recipe;
 
 import model.recipe.Recipe;
+import model.recipe.RecipeRepository;
 
 public class FindRecipeById {
 

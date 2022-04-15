@@ -3,7 +3,7 @@ package use_case;
 import model.FakeIngredients;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import use_case.ingredient.IngredientRepository;
+import model.ingredient.IngredientRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

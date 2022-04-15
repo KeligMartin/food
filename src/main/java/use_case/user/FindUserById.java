@@ -1,6 +1,7 @@
 package use_case.user;
 
 import model.user.User;
+import model.user.UserRepository;
 
 public class FindUserById {
 

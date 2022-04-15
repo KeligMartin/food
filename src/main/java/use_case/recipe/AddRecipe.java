@@ -1,13 +1,13 @@
 package use_case.recipe;
 
 import model.recipe.Recipe;
-import model.recipe.Recipes;
+import model.recipe.RecipeRepository;
 
 public class AddRecipe {
 
-    private final Recipes recipes;
+    private final RecipeRepository recipes;
 
-    public AddRecipe(Recipes recipes) {
+    public AddRecipe(RecipeRepository recipes) {
         this.recipes = recipes;
     }
 

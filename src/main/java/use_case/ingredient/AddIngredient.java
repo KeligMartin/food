@@ -1,13 +1,13 @@
 package use_case.ingredient;
 
 import model.ingredient.Ingredient;
-import model.ingredient.Ingredients;
+import model.ingredient.IngredientRepository;
 
 public class AddIngredient {
 
-    private final Ingredients ingredients;
+    private final IngredientRepository ingredients;
 
-    public AddIngredient(Ingredients ingredients) {
+    public AddIngredient(IngredientRepository ingredients) {
         this.ingredients = ingredients;
     }
 

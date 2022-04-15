@@ -2,7 +2,7 @@ package model;
 
 import model.user.DietaryRegimes;
 import model.user.User;
-import use_case.user.UserRepository;
+import model.user.UserRepository;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -53,5 +53,20 @@ public class FakeUsers implements UserRepository {
     @Override
     public User findById(String userId) {
         return userMap.get(userId);
+    }
+
+    @Override
+    public void addUser(User user) {
+
+    }
+
+    @Override
+    public void deleteUser(String userId) {
+
+    }
+
+    @Override
+    public void userEat(String userId, String recipeId) {
+
     }
 }

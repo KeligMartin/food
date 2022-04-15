@@ -1,16 +1,16 @@
 package use_case.recipe;
 
-import model.recipe.Recipes;
+import model.recipe.RecipeRepository;
 
 public class DeleteRecipe {
 
-    private final Recipes recipes;
+    private final RecipeRepository recipes;
 
-    public DeleteRecipe(Recipes recipes) {
+    public DeleteRecipe(RecipeRepository recipes) {
         this.recipes = recipes;
     }
 
-    public void execute(int id) {
+    public void execute(String id) {
         recipes.deleteRecipe(id);
     }
 }

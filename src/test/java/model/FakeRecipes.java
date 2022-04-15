@@ -2,7 +2,7 @@ package model;
 
 import model.ingredient.Ingredient;
 import model.recipe.Recipe;
-import use_case.recipe.RecipeRepository;
+import model.recipe.RecipeRepository;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -60,5 +60,15 @@ public class FakeRecipes implements RecipeRepository {
     @Override
     public Recipe findById(String recipeId) {
         return recipeMap.get(recipeId);
+    }
+
+    @Override
+    public void addRecipe(Recipe recipe) {
+
+    }
+
+    @Override
+    public void deleteRecipe(String id) {
+
     }
 }

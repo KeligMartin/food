@@ -1,13 +1,13 @@
 package use_case.user;
 
 import model.user.User;
-import model.user.Users;
+import model.user.UserRepository;
 
 public class AddUser {
 
-    private final Users users;
+    private final UserRepository users;
 
-    public AddUser(Users users) {
+    public AddUser(UserRepository users) {
         this.users = users;
     }
 

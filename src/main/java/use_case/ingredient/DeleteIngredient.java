@@ -1,12 +1,12 @@
 package use_case.ingredient;
 
-import model.ingredient.Ingredients;
+import model.ingredient.IngredientRepository;
 
 public class DeleteIngredient {
 
-    private final Ingredients recipes;
+    private final IngredientRepository recipes;
 
-    public DeleteIngredient(Ingredients recipes) {
+    public DeleteIngredient(IngredientRepository recipes) {
         this.recipes = recipes;
     }
 

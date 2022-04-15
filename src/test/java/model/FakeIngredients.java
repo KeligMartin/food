@@ -1,7 +1,7 @@
 package model;
 
 import model.ingredient.Ingredient;
-import use_case.ingredient.IngredientRepository;
+import model.ingredient.IngredientRepository;
 
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -41,5 +41,15 @@ public class FakeIngredients implements IngredientRepository {
     @Override
     public Ingredient findById(String IngredientId) {
         return ingredientMap.get(IngredientId);
+    }
+
+    @Override
+    public Ingredient addIngredient(Ingredient ingredient) {
+        return null;
+    }
+
+    @Override
+    public void deleteIngredient(int id) {
+
     }
 }
