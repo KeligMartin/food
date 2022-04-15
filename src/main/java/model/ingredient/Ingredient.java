@@ -12,9 +12,10 @@ import java.util.Objects;
 @Getter
 public class Ingredient {
 
-    private String id;
+    private IngredientID id;
 
-    private String name;
+ ls(dietaryRegimes, user.dietaryRegimes) && Objects.equals(caloriesConsumedByDate, user.caloriesConsumedByDate);
+    }   private String name;
 
     private LocalDate expirationDate;
 
@@ -40,10 +41,8 @@ public class Ingredient {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Ingredient that = (Ingredient) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(expirationDate, that.expirationDate) && Objects.equals(compatibleRegimeList, that.compatibleRegimeList) && Objects.equals(calorie, that.calorie);
+        Ingredient ingredient = (Ingredient) o;
+        return ingredient.id == this.id;
     }
 
     @Override

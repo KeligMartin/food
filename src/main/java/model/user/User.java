@@ -15,7 +15,7 @@ import java.util.Optional;
 @Builder
 @Getter
 public class User {
-    private String id;
+    private UserID id;
     private String username;
     private String password;
     private List<DietaryRegimes> dietaryRegimes;
@@ -59,10 +59,8 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Objects.equals(dietaryRegimes, user.dietaryRegimes) && Objects.equals(caloriesConsumedByDate, user.caloriesConsumedByDate);
+        return user.id == this.id;
     }
 
     @Override
