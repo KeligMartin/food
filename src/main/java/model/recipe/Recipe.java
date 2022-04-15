@@ -30,4 +30,10 @@ public class Recipe {
         }
         return true;
     }
+
+    public Integer getCalories() {
+        return this.ingredients.stream()
+                .map(Ingredient::getCalorie)
+                .reduce(0, Integer::sum);
+    }
 }
