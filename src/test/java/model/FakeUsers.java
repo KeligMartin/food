@@ -13,7 +13,6 @@ import java.util.Map;
 
 public class FakeUsers implements UserRepository {
     Map<String, User> userMap;
-    DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 
     public FakeUsers() {
         userMap = new HashMap<>();
@@ -21,28 +20,19 @@ public class FakeUsers implements UserRepository {
                 .username("user1")
                 .password("password")
                 .dietaryRegimes(new ArrayList<>(List.of(DietaryRegimes.VEGAN, DietaryRegimes.GLUTEN_INTOLERANT)))
-                .caloriesConsumedByDate(Map.of(
-                        LocalDate.parse("14/08/2016", dateTimeFormatter),200,
-                        LocalDate.parse("15/08/2016", dateTimeFormatter),250)
-                )
+                .caloriesConsumed(400)
                 .build();
         User user2 = User.builder()
                 .username("user")
                 .password("password")
                 .dietaryRegimes(new ArrayList<>(List.of(DietaryRegimes.GLUTEN_INTOLERANT)))
-                .caloriesConsumedByDate(Map.of(
-                        LocalDate.parse("14/08/2016", dateTimeFormatter),600,
-                        LocalDate.parse("15/08/2016", dateTimeFormatter),400)
-                )
+                .caloriesConsumed(300)
                 .build();
         User user3 = User.builder()
                 .username("user")
                 .password("password")
                 .dietaryRegimes(new ArrayList<>(List.of(DietaryRegimes.VEGAN)))
-                .caloriesConsumedByDate(Map.of(
-                        LocalDate.parse("14/08/2016", dateTimeFormatter),500,
-                        LocalDate.parse("15/08/2016", dateTimeFormatter),300)
-                )
+                .caloriesConsumed(500)
                 .build();
 
         userMap.put("001", user1);
