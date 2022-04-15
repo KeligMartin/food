@@ -1,7 +1,9 @@
 package model;
 
+import model.recipe.RecipeID;
 import model.user.DietaryRegimes;
 import model.user.User;
+import model.user.UserID;
 import model.user.UserRepository;
 
 import java.time.LocalDate;
@@ -12,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 public class FakeUsers implements UserRepository {
-    Map<String, User> userMap;
+    Map<UserID, User> userMap;
 
     public FakeUsers() {
         userMap = new HashMap<>();
@@ -35,13 +37,13 @@ public class FakeUsers implements UserRepository {
                 .caloriesConsumed(500)
                 .build();
 
-        userMap.put("001", user1);
-        userMap.put("002", user2);
-        userMap.put("003", user3);
+        userMap.put(new UserID("001"), user1);
+        userMap.put(new UserID("002"), user2);
+        userMap.put(new UserID("003"), user3);
     }
 
     @Override
-    public User findById(String userId) {
+    public User findById(UserID userId) {
         return userMap.get(userId);
     }
 
@@ -51,12 +53,12 @@ public class FakeUsers implements UserRepository {
     }
 
     @Override
-    public void deleteUser(String userId) {
+    public void deleteUser(UserID userId) {
 
     }
 
     @Override
-    public void userEat(String userId, String recipeId) {
+    public void userEat(UserID userId, RecipeID recipeId) {
 
     }
 }

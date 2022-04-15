@@ -1,10 +1,11 @@
 package model.user;
 
+import model.recipe.RecipeID;
 import model.user.User;
 
 public interface UserRepository {
-    User findById(String userId);
+    User findById(UserID userId);
     void addUser(User user);
-    void deleteUser(String userId);
-    void userEat(String userId, String recipeId);
+    void deleteUser(UserID userId);
+    void userEat(UserID userId, RecipeID recipeId);
 }

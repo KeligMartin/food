@@ -2,6 +2,7 @@ package model;
 
 import model.ingredient.Ingredient;
 import model.recipe.Recipe;
+import model.recipe.RecipeID;
 import model.recipe.RecipeRepository;
 import model.user.DietaryRegimes;
 
@@ -13,7 +14,7 @@ import java.util.Map;
 
 public class FakeRecipes implements RecipeRepository {
 
-    Map<String, Recipe> recipeMap;
+    Map<RecipeID, Recipe> recipeMap;
 
     public FakeRecipes() {
         recipeMap = new HashMap<>();
@@ -88,13 +89,13 @@ public class FakeRecipes implements RecipeRepository {
                 .ingredients(ingredient2List)
                 .build();
 
-        recipeMap.put("001", recipe);
-        recipeMap.put("002", recipe2);
+        recipeMap.put(new RecipeID("001"), recipe);
+        recipeMap.put(new RecipeID("002"), recipe2);
 
     }
 
     @Override
-    public Recipe findById(String recipeId) {
+    public Recipe findById(RecipeID recipeId) {
         return recipeMap.get(recipeId);
     }
 
@@ -104,7 +105,7 @@ public class FakeRecipes implements RecipeRepository {
     }
 
     @Override
-    public void deleteRecipe(String id) {
+    public void deleteRecipe(RecipeID id) {
 
     }
 }

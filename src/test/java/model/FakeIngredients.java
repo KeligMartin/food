@@ -1,6 +1,7 @@
 package model;
 
 import model.ingredient.Ingredient;
+import model.ingredient.IngredientID;
 import model.ingredient.IngredientRepository;
 import model.user.DietaryRegimes;
 
@@ -12,7 +13,7 @@ import java.util.Map;
 
 public class FakeIngredients implements IngredientRepository {
 
-    Map<String, Ingredient> ingredientMap;
+    Map<IngredientID, Ingredient> ingredientMap;
 
     public FakeIngredients() {
         ingredientMap = new HashMap<>();
@@ -49,15 +50,15 @@ public class FakeIngredients implements IngredientRepository {
                 .compatibleRegimeList(new ArrayList<>())
                 .build();
 
-        ingredientMap.put("001", ingredient);
-        ingredientMap.put("002", ingredient2);
-        ingredientMap.put("003", ingredient3);
-        ingredientMap.put("004", ingredient4);
+        ingredientMap.put(new IngredientID("001"), ingredient);
+        ingredientMap.put(new IngredientID("002"), ingredient2);
+        ingredientMap.put(new IngredientID("003"), ingredient3);
+        ingredientMap.put(new IngredientID("004"), ingredient4);
     }
 
 
     @Override
-    public Ingredient findById(String IngredientId) {
+    public Ingredient findById(IngredientID IngredientId) {
         return ingredientMap.get(IngredientId);
     }
 
@@ -67,7 +68,7 @@ public class FakeIngredients implements IngredientRepository {
     }
 
     @Override
-    public Ingredient deleteIngredient(String ingredientId) {
+    public Ingredient deleteIngredient(IngredientID ingredientId) {
         return ingredientMap.remove(ingredientId);
     }
 }
