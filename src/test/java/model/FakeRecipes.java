@@ -14,28 +14,8 @@ import java.util.Map;
 public class FakeRecipes implements RecipeRepository {
 
     Map<String, Recipe> recipeMap;
-    FakeIngredients fakeIngredients;
 
     public FakeRecipes() {
-<<<<<<< HEAD
-        FakeIngredients fakeIngredients = new FakeIngredients();
-
-        recipeMap = new HashMap<>();
-        List<Ingredient> saladeTomateOignonIngredientList = new ArrayList<>();
-        List<String> saladeTomateOignonSteps = new ArrayList<>();
-
-        Ingredient salade = fakeIngredients.findById("001");
-        Ingredient tomate = fakeIngredients.findById("002");
-        Ingredient oignons = fakeIngredients.findById("003");
-
-        saladeTomateOignonIngredientList.add(salade);
-        saladeTomateOignonIngredientList.add(tomate);
-        saladeTomateOignonIngredientList.add(oignons);
-
-        saladeTomateOignonSteps.add(salade.getName());
-        saladeTomateOignonSteps.add(tomate.getName());
-        saladeTomateOignonSteps.add(oignons.getName());
-=======
         recipeMap = new HashMap<>();
 
         List<Ingredient> ingredientList = new ArrayList<>();
@@ -63,15 +43,9 @@ public class FakeRecipes implements RecipeRepository {
                 .compatibleRegimeList(allRegime)
                 .expirationDate(LocalDate.now())
                 .build();
->>>>>>> c755e84670ec290955d59a062cddeca183cedae6
 
-        Recipe saladeTomateOignon = Recipe
+        Ingredient oignons = Ingredient
                 .builder()
-<<<<<<< HEAD
-                .name("SaladeTomateOignon")
-                .steps(saladeTomateOignonSteps)
-                .ingredients(saladeTomateOignonIngredientList)
-=======
                 .name("Oignons")
                 .calorie(40)
                 .compatibleRegimeList(allRegime)
@@ -85,18 +59,12 @@ public class FakeRecipes implements RecipeRepository {
                 .calorie(271)
                 .compatibleRegimeList(regularRegime)
                 .expirationDate(LocalDate.now())
->>>>>>> c755e84670ec290955d59a062cddeca183cedae6
                 .build();
 
-        List<Ingredient> steakFriteIngredientList = new ArrayList<>();
-        List<String> steakFriteSteps = new ArrayList<>();
+        ingredientList.add(salade);
+        ingredientList.add(tomate);
+        ingredientList.add(oignons);
 
-        Ingredient viande = fakeIngredients.findById("004");
-
-<<<<<<< HEAD
-        steakFriteIngredientList.add(viande);
-        steakFriteIngredientList.add(tomate);
-=======
         ingredient2List.add(salade);
         ingredient2List.add(tomate);
         ingredient2List.add(oignons);
@@ -105,22 +73,14 @@ public class FakeRecipes implements RecipeRepository {
         steps.add(salade.getName());
         steps.add(tomate.getName());
         steps.add(oignons.getName());
->>>>>>> c755e84670ec290955d59a062cddeca183cedae6
 
-        steakFriteSteps.add(viande.getName());
-        steakFriteSteps.add(tomate.getName());
-
-        Recipe steakFrite = Recipe
+        Recipe recipe = Recipe
                 .builder()
-                .name("SteakFrite")
-                .steps(steakFriteSteps)
-                .ingredients(steakFriteIngredientList)
+                .name("SaladeTomateOignon")
+                .steps(steps)
+                .ingredients(ingredientList)
                 .build();
 
-<<<<<<< HEAD
-                recipeMap.put("001", saladeTomateOignon);
-                recipeMap.put("002", steakFrite);
-=======
         Recipe recipe2 = Recipe
                 .builder()
                 .name("SaladeTomateOignonSteak")
@@ -130,7 +90,6 @@ public class FakeRecipes implements RecipeRepository {
 
         recipeMap.put("001", recipe);
         recipeMap.put("002", recipe2);
->>>>>>> c755e84670ec290955d59a062cddeca183cedae6
 
     }
 
