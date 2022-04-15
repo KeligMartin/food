@@ -15,7 +15,7 @@ public class FakeUsers implements UserRepository {
     Map<String, User> userMap;
     DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 
-    FakeUsers() {
+    public FakeUsers() {
         userMap = new HashMap<>();
         User user1 = User.builder()
                 .username("user")
@@ -51,7 +51,7 @@ public class FakeUsers implements UserRepository {
     }
 
     @Override
-    public User findById(User userId) {
+    public User findById(String userId) {
         return userMap.get(userId);
     }
 }

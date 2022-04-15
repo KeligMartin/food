@@ -11,7 +11,7 @@ public class FakeIngredients implements IngredientRepository {
 
     Map<String, Ingredient> ingredientMap;
 
-    FakeIngredients() {
+    public FakeIngredients() {
         ingredientMap = new HashMap<>();
 
         Ingredient ingredient = Ingredient

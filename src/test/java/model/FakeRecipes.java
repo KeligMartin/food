@@ -14,7 +14,7 @@ public class FakeRecipes implements RecipeRepository {
 
     Map<String, Recipe> recipeMap;
 
-    FakeRecipes() {
+    public FakeRecipes() {
 
         recipeMap = new HashMap<>();
         List<Ingredient> ingredientList = new ArrayList<>();
