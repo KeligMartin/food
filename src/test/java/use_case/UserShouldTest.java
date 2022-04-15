@@ -34,7 +34,7 @@ public class UserShouldTest {
 
     @Test
     void should_user_eat_recipe_with_incompatible_regime_throw_IncompatibleRegimeException() {
-        assertThrows(IncompatibleRegimeException.class, () -> {
+        assertThrows(UnsupportedOperationException.class, () -> {
             userRepository.findById(new UserID("001")).eatRecipe(recipeRepository.findById(new RecipeID("001")));
         });
     }

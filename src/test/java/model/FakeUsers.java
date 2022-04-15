@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 public class FakeUsers implements UserRepository {
-    Map<String, User> userMap;
+    Map<UserID, User> userMap;
     DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 
     public FakeUsers() {
@@ -47,9 +47,9 @@ public class FakeUsers implements UserRepository {
                 )
                 .build();
 
-        userMap.put("001", user1);
-        userMap.put("002", user2);
-        userMap.put("003", user3);
+        userMap.put(new UserID("001"), user1);
+        userMap.put(new UserID("002"), user2);
+        userMap.put(new UserID("003"), user3);
     }
 
     @Override
