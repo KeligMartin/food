@@ -17,18 +17,21 @@ public class FakeIngredients implements IngredientRepository {
         Ingredient ingredient = Ingredient
                 .builder()
                 .name("Salade")
+                .calorie(15)
                 .expirationDate(LocalDate.now())
                 .build();
 
         Ingredient ingredient2 = Ingredient
                 .builder()
                 .name("Tomate")
+                .calorie(20)
                 .expirationDate(LocalDate.now())
                 .build();
 
         Ingredient ingredient3 = Ingredient
                 .builder()
                 .name("Oignons")
+                .calorie(40)
                 .expirationDate(LocalDate.now())
                 .build();
 

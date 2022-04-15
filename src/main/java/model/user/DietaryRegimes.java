@@ -4,5 +4,6 @@ public enum DietaryRegimes {
     VEGETARIAN,
     VEGAN,
     GLUTEN_INTOLERANT,
-    REGULAR
+    REGULAR,
+    ALL
 }
