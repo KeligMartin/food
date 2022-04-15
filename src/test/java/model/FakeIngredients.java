@@ -20,7 +20,11 @@ public class FakeIngredients implements IngredientRepository {
         Ingredient ingredient = Ingredient
                 .builder()
                 .name("Salade")
+<<<<<<< HEAD
                 .calorie(50)
+=======
+                .calorie(15)
+>>>>>>> c755e84670ec290955d59a062cddeca183cedae6
                 .expirationDate(LocalDate.now())
                 .compatibleRegimeList(new ArrayList<>(List.of(DietaryRegimes.VEGAN)))
                 .build();
@@ -28,7 +32,11 @@ public class FakeIngredients implements IngredientRepository {
         Ingredient ingredient2 = Ingredient
                 .builder()
                 .name("Tomate")
+<<<<<<< HEAD
                 .calorie(50)
+=======
+                .calorie(20)
+>>>>>>> c755e84670ec290955d59a062cddeca183cedae6
                 .expirationDate(LocalDate.now())
                 .compatibleRegimeList(new ArrayList<>(List.of(DietaryRegimes.VEGAN)))
                 .build();
@@ -36,7 +44,11 @@ public class FakeIngredients implements IngredientRepository {
         Ingredient ingredient3 = Ingredient
                 .builder()
                 .name("Oignons")
+<<<<<<< HEAD
                 .calorie(50)
+=======
+                .calorie(40)
+>>>>>>> c755e84670ec290955d59a062cddeca183cedae6
                 .expirationDate(LocalDate.now())
                 .compatibleRegimeList(new ArrayList<>(List.of(DietaryRegimes.VEGAN)))
                 .build();

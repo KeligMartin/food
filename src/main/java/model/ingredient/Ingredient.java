@@ -27,6 +27,9 @@ public class Ingredient {
 
     public boolean isCompatibleWithRegimeList(List<DietaryRegimes> regimes){
         for (DietaryRegimes regime: regimes) {
+            if(this.getCompatibleRegimeList().contains(DietaryRegimes.ALL)){
+                return true;
+            }
             if (!this.getCompatibleRegimeList().contains(regime)){
                 return false;
             }
